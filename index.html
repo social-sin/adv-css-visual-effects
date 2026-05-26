@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Advanced Table Styling</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Advanced Table Styling</h1>
+
+    <p class="intro">
+      Explore sticky headers, hover effects,
+      sortable columns, collapsible rows,
+      and responsive table layouts.
+    </p>
+  </header>
+
+  <!-- TABLE WRAPPER -->
+  <section class="card">
+
+    <h2>Interactive Sales Table</h2>
+
+    <div class="table-wrapper">
+
+      <table id="sales-table">
+
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">
+              Month
+            </th>
+
+            <th onclick="sortTable(1)">
+              Revenue
+            </th>
+
+            <th onclick="sortTable(2)">
+              Region
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!-- ROW 1 -->
+          <tr class="parent">
+            <td>January</td>
+            <td>$5,000</td>
+            <td>North</td>
+          </tr>
+
+          <tr class="child">
+            <td colspan="3">
+              Top-selling products increased winter revenue.
+            </td>
+          </tr>
+
+          <!-- ROW 2 -->
+          <tr class="parent">
+            <td>February</td>
+            <td>$7,200</td>
+            <td>South</td>
+          </tr>
+
+          <tr class="child">
+            <td colspan="3">
+              Seasonal promotions improved engagement.
+            </td>
+          </tr>
+
+          <!-- ROW 3 -->
+          <tr class="parent">
+            <td>March</td>
+            <td>$6,400</td>
+            <td>West</td>
+          </tr>
+
+          <tr class="child">
+            <td colspan="3">
+              Product redesign campaign launched successfully.
+            </td>
+          </tr>
+
+          <!-- ROW 4 -->
+          <tr class="parent">
+            <td>April</td>
+            <td>$8,100</td>
+            <td>East</td>
+          </tr>
+
+          <tr class="child">
+            <td colspan="3">
+              Spring campaign increased overall visibility.
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
