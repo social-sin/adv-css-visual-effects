@@ -4,110 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Advanced Table Styling</title>
+  <title>Advanced CSS Filters & Blend Modes</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header>
-    <h1>Advanced Table Styling</h1>
+  <header class="hero">
+    <h1 class="gradient-text">
+      Advanced CSS Visual Effects
+    </h1>
 
-    <p class="intro">
-      Explore sticky headers, hover effects,
-      sortable columns, collapsible rows,
-      and responsive table layouts.
+    <p>
+      Explore filters, blend modes, depth,
+      motion, glassmorphism, and animated effects.
     </p>
   </header>
 
-  <!-- TABLE WRAPPER -->
-  <section class="card">
+  <!-- FILTERS -->
+  <section class="card-section">
 
-    <h2>Interactive Sales Table</h2>
+    <h2>CSS Filters</h2>
 
-    <div class="table-wrapper">
+    <div class="gallery">
 
-      <table id="sales-table">
+      <img
+        src="https://picsum.photos/id/1015/500/300"
+        alt="Original image"
+        class="filter-image grayscale"
+      >
 
-        <thead>
-          <tr>
-            <th onclick="sortTable(0)">
-              Month
-            </th>
+      <img
+        src="https://picsum.photos/id/1025/500/300"
+        alt="Sepia image"
+        class="filter-image sepia"
+      >
 
-            <th onclick="sortTable(1)">
-              Revenue
-            </th>
-
-            <th onclick="sortTable(2)">
-              Region
-            </th>
-          </tr>
-        </thead>
-
-        <tbody>
-
-          <!-- ROW 1 -->
-          <tr class="parent">
-            <td>January</td>
-            <td>$5,000</td>
-            <td>North</td>
-          </tr>
-
-          <tr class="child">
-            <td colspan="3">
-              Top-selling products increased winter revenue.
-            </td>
-          </tr>
-
-          <!-- ROW 2 -->
-          <tr class="parent">
-            <td>February</td>
-            <td>$7,200</td>
-            <td>South</td>
-          </tr>
-
-          <tr class="child">
-            <td colspan="3">
-              Seasonal promotions improved engagement.
-            </td>
-          </tr>
-
-          <!-- ROW 3 -->
-          <tr class="parent">
-            <td>March</td>
-            <td>$6,400</td>
-            <td>West</td>
-          </tr>
-
-          <tr class="child">
-            <td colspan="3">
-              Product redesign campaign launched successfully.
-            </td>
-          </tr>
-
-          <!-- ROW 4 -->
-          <tr class="parent">
-            <td>April</td>
-            <td>$8,100</td>
-            <td>East</td>
-          </tr>
-
-          <tr class="child">
-            <td colspan="3">
-              Spring campaign increased overall visibility.
-            </td>
-          </tr>
-
-        </tbody>
-
-      </table>
+      <img
+        src="https://picsum.photos/id/1035/500/300"
+        alt="Blur image"
+        class="filter-image blur"
+      >
 
     </div>
 
   </section>
 
-  <script src="script.js"></script>
+  <!-- HOVER FILTER -->
+  <section class="card-section">
+
+    <h2>Interactive Hover Filters</h2>
+
+    <img
+      src="https://picsum.photos/id/1040/900/500"
+      alt="Hover effect image"
+      class="hover-filter"
+    >
+
+  </section>
+
+  <!-- BLEND MODE -->
+  <section class="card-section">
+
+    <h2>Background Blend Mode</h2>
+
+    <div class="blend-box">
+      <h3>Multiply Blend Overlay</h3>
+    </div>
+
+  </section>
+
+  <!-- MIX BLEND MODE -->
+  <section class="card-section dark-section">
+
+    <h2>mix-blend-mode</h2>
+
+    <div class="mix-wrapper">
+
+      <div class="circle red"></div>
+      <div class="circle blue"></div>
+
+    </div>
+
+  </section>
+
+  <!-- DEPTH + MOTION -->
+  <section class="card-section">
+
+    <h2>Depth & Motion</h2>
+
+    <div class="card-grid">
+
+      <article class="depth-card">
+        <h3>Interactive Card</h3>
+
+        <p>
+          Hover to reveal subtle perspective,
+          scaling, and depth effects.
+        </p>
+      </article>
+
+      <article class="depth-card">
+        <h3>3D Illusion</h3>
+
+        <p>
+          Filters and transforms create layered motion.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- GLASSMORPHISM -->
+  <section class="glass-section">
+
+    <div class="glass-card">
+
+      <h2>Glassmorphism UI</h2>
+
+      <p>
+        Frosted-glass interfaces use transparency,
+        blur, and layered depth.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ANIMATED FILTER -->
+  <section class="card-section">
+
+    <h2>Animated Filter Effects</h2>
+
+    <img
+      src="https://picsum.photos/id/1060/700/400"
+      alt="Animated pulse effect"
+      class="pulse-image"
+    >
+
+  </section>
 
 </body>
 </html>
