@@ -1,31 +1,12 @@
 /* =========================
-   ROOT VARIABLES
-========================= */
-
-:root {
-
-  --bg-color: #fef6e4;
-  --text-color: #172c66;
-
-  --header-bg: #f4f4f4;
-
-  --row-hover: #e0f7fa;
-  --cell-hover: #f1f1f1;
-
-  --border-color: #cccccc;
-
-  --radius: 10px;
-}
-
-/* =========================
    GLOBAL STYLES
 ========================= */
 
 body {
   font-family: Arial, sans-serif;
 
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: #fef6e4;
+  color: #172c66;
 
   margin: 0;
   padding: 40px;
@@ -38,158 +19,315 @@ body {
 ========================= */
 
 h1,
-h2 {
-  color: green;
+h2,
+h3 {
+  margin-top: 0;
 }
 
-h1 {
-  text-align: center;
-  font-size: 3rem;
-}
-
-.intro {
+.hero {
   text-align: center;
 
-  max-width: 700px;
-
-  margin:
-    0 auto
-    2rem auto;
+  margin-bottom: 4rem;
 }
 
 /* =========================
-   CARD
+   GRADIENT TEXT
 ========================= */
 
-.card {
+.gradient-text {
+  font-size: 4rem;
+
+  background:
+    linear-gradient(
+      to right,
+      #ff6600,
+      #0066ff
+    );
+
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+/* =========================
+   SECTION CARDS
+========================= */
+
+.card-section {
   background-color: white;
 
-  border: 2px solid var(--border-color);
-
-  border-radius: var(--radius);
+  border-radius: 12px;
 
   padding: 30px;
+
+  margin-bottom: 40px;
+
+  border: 2px solid #dddddd;
 }
 
 /* =========================
-   TABLE WRAPPER
+   FILTER GALLERY
 ========================= */
 
-.table-wrapper {
-  max-height: 400px;
+.gallery {
+  display: grid;
 
-  overflow-y: auto;
-  overflow-x: auto;
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
 
-  border-radius: var(--radius);
+  gap: 1rem;
 }
 
-/* =========================
-   TABLE
-========================= */
-
-table {
+.filter-image {
   width: 100%;
 
-  border-collapse: collapse;
+  border-radius: 10px;
 
-  min-width: 600px;
+  transition: filter 0.4s ease;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.sepia {
+  filter: sepia(80%);
+}
+
+.blur {
+  filter: blur(2px);
 }
 
 /* =========================
-   TABLE HEADERS
+   HOVER FILTERS
 ========================= */
 
-thead th {
-  position: sticky;
+.hover-filter {
+  width: 100%;
 
-  top: 0;
+  border-radius: 12px;
 
-  background-color: var(--header-bg);
+  transition:
+    filter 0.4s ease,
+    transform 0.4s ease;
+}
 
-  z-index: 10;
+.hover-filter:hover {
+  filter:
+    brightness(120%)
+    saturate(150%)
+    blur(2px);
 
-  cursor: pointer;
-
-  padding: 1rem;
-
-  text-align: left;
-
-  border-bottom: 2px solid var(--border-color);
+  transform: scale(1.02);
 }
 
 /* =========================
-   TABLE CELLS
+   BLEND MODES
 ========================= */
 
-td {
-  padding: 1rem;
+.blend-box {
+  height: 300px;
 
-  border-bottom: 1px solid #dddddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+
+  border-radius: 12px;
+
+  background:
+    url("https://picsum.photos/id/1050/1200/700")
+    center/cover no-repeat;
+
+  background-color: rgba(248, 196, 113, 0.8);
+
+  background-blend-mode: multiply;
 }
 
 /* =========================
-   ZEBRA STRIPING
+   MIX BLEND MODE
 ========================= */
 
-tbody tr:nth-child(4n + 1),
-tbody tr:nth-child(4n + 2) {
+.dark-section {
+  background-color: #111111;
+
+  color: white;
+}
+
+.mix-wrapper {
+  position: relative;
+
+  height: 300px;
+}
+
+.circle {
+  position: absolute;
+
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+
+  mix-blend-mode: screen;
+}
+
+.red {
+  background-color: crimson;
+
+  left: 100px;
+  top: 50px;
+}
+
+.blue {
+  background-color: dodgerblue;
+
+  left: 220px;
+  top: 50px;
+}
+
+/* =========================
+   DEPTH & MOTION
+========================= */
+
+.card-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 2rem;
+}
+
+.depth-card {
   background-color: #fafafa;
+
+  border-radius: 12px;
+
+  padding: 2rem;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.3s ease;
+
+  transform: rotateY(10deg);
+
+  filter:
+    drop-shadow(
+      0 10px 15px rgba(0,0,0,0.2)
+    );
+}
+
+.depth-card:hover {
+  transform:
+    rotateY(0deg)
+    scale(1.05);
+
+  filter:
+    drop-shadow(
+      0 15px 20px rgba(0,0,0,0.3)
+    );
 }
 
 /* =========================
-   ROW HOVER
+   GLASSMORPHISM
 ========================= */
 
-tbody tr.parent:hover {
-  background-color: var(--row-hover);
+.glass-section {
+  position: relative;
 
-  cursor: pointer;
+  padding: 100px 20px;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  background:
+    url("https://picsum.photos/id/1043/1400/800")
+    center/cover no-repeat;
+}
+
+.glass-card {
+  max-width: 500px;
+
+  margin: 0 auto;
+
+  padding: 2rem;
+
+  border-radius: 16px;
+
+  color: white;
+
+  background:
+    rgba(255,255,255,0.1);
+
+  backdrop-filter:
+    blur(10px)
+    saturate(120%);
+
+  border:
+    1px solid rgba(255,255,255,0.25);
 }
 
 /* =========================
-   CELL HOVER
+   ANIMATED FILTERS
 ========================= */
 
-td:hover {
-  background-color: var(--cell-hover);
+@keyframes pulse {
+
+  0%, 100% {
+    filter:
+      brightness(100%)
+      saturate(100%);
+  }
+
+  50% {
+    filter:
+      brightness(120%)
+      saturate(150%);
+  }
+}
+
+.pulse-image {
+  width: 100%;
+
+  border-radius: 12px;
+
+  animation: pulse 2s infinite;
 }
 
 /* =========================
-   SORT ICONS
+   ACCESSIBILITY
 ========================= */
 
-th.sorted-asc::after {
-  content: " ▲";
-}
+@media (prefers-reduced-motion: reduce) {
 
-th.sorted-desc::after {
-  content: " ▼";
-}
-
-/* =========================
-   COLLAPSIBLE ROWS
-========================= */
-
-.child {
-  display: none;
-
-  background-color: #f9f9f9;
-
-  font-style: italic;
-}
-
-.parent.active + .child {
-  display: table-row;
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* =========================
-   RESPONSIVE TABLE
+   RESPONSIVE
 ========================= */
 
 @media (max-width: 768px) {
 
   body {
     padding: 20px;
+  }
+
+  .gradient-text {
+    font-size: 2.5rem;
+  }
+
+  .mix-wrapper {
+    height: 220px;
+  }
+
+  .circle {
+    width: 140px;
+    height: 140px;
   }
 }
